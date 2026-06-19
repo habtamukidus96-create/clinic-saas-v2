@@ -1,1 +1,19 @@
-
+{
+  "name": "clinic-saas-v2",
+  "version": "2.0.0",
+  "description": "Premium Clinic SaaS Platform (Multi-clinic + AI + Appointments)",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "firebase-admin": "^12.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
