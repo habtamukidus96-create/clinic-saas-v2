@@ -1,46 +1,90 @@
-let clinicId = localStorage.getItem("clinicId");
+// Smooth scroll for navigation
 
-async function login(){
-  const email = document.getElementById("email").value;
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
 
-  const res = await fetch("/api/login", {
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body: JSON.stringify({ email })
-  });
+        const target = document.querySelector(this.getAttribute('href'));
 
-  const data = await res.json();
+        if(target){
+            target.scrollIntoView({
+                behavior:'smooth'
+            });
+        }
+    });
+});
 
-  localStorage.setItem("clinicId", data.clinicId);
+// Animated stats
 
-  window.location.href = "dashboard.html";
-}
+const stats = document.querySelectorAll(".stat-card h2");
 
-async function book(){
-  await fetch(`/api/book/${clinicId}`, {
-    method:"POST",
-    headers:{ "Content-Type":"application/json" },
-    body: JSON.stringify({
-      name:name.value,
-      phone:phone.value,
-      date:date.value
-    })
-  });
+const observer = new IntersectionObserver(entries => {
 
-  alert("Appointment booked ✔");
-  load();
-}
+    entries.forEach(entry => {
 
-async function load(){
-  const res = await fetch(`/api/appointments/${clinicId}`);
-  const data = await res.json();
+        if(entry.isIntersecting){
 
-  document.getElementById("appointments").innerHTML =
-    data.map(a =>
-      `<div class="card">${a.name} - ${a.phone} - ${a.date}</div>`
-    ).join("");
-}
+            const el = entry.target;
 
-if(window.location.pathname.includes("dashboard")){
-  load();
+            const text = el.innerText;
+
+            const targetNumber =
+                parseInt(text.replace(/\D/g,'')) || 0;
+
+            let count = 0;
+
+            const speed = targetNumber / 60;
+
+            const update = () => {
+
+                count += speed;
+
+                if(count < targetNumber){
+
+                    el.innerText =
+                    Math.floor(count) +
+                    text.replace(/[0-9]/g,'');
+
+                    requestAnimationFrame(update);
+
+                } else {
+
+                    el.innerText = text;
+
+                }
+
+            };
+
+            update();
+
+            observer.unobserve(el);
+
+        }
+
+    });
+
+});
+
+stats.forEach(stat => observer.observe(stat));
+
+
+// Booking form
+
+const bookingForm =
+document.querySelector(".booking form");
+
+if(bookingForm){
+
+bookingForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert(
+    "✅ Appointment request submitted successfully!"
+    );
+
+    bookingForm.reset();
+
+});
+
 }
