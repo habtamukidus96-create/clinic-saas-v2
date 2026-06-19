@@ -1,1 +1,46 @@
+body{
+  font-family:Arial;
+  margin:0;
+  background:#f4f7ff;
+}
 
+header{
+  background:#0b3d91;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+
+.hero{
+  text-align:center;
+  padding:80px;
+  background:#0b3d91;
+  color:white;
+}
+
+button{
+  padding:10px;
+  background:#00c2ff;
+  border:none;
+  color:white;
+  cursor:pointer;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  padding:20px;
+}
+
+.card{
+  background:white;
+  padding:15px;
+  margin:10px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.center{
+  width:300px;
+  margin:100px auto;
+}
