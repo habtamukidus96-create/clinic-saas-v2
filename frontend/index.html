@@ -1,33 +1,191 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Clinic SaaS v2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EliteCare Clinic SaaS</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<header>
-  <h1>🏥 Premium Clinic SaaS</h1>
-  <p>Smart Healthcare Management System</p>
-</header>
+<nav class="navbar">
+    <div class="logo">🏥 EliteCare</div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#doctors">Doctors</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="login.html" class="btn-primary">Login</a>
+</nav>
 
 <section class="hero">
-  <h1>Run Your Clinic Digitally</h1>
-  <p>Appointments • AI Assistant • Patient Management</p>
 
-  <a href="login.html"><button>Get Started</button></a>
+    <div class="hero-content">
+        <h1>Modern Healthcare For Every Family</h1>
+
+        <p>
+            Book appointments, connect with doctors,
+            and manage healthcare digitally.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#booking" class="btn-primary">Book Appointment</a>
+            <a href="#services" class="btn-secondary">Explore Services</a>
+        </div>
+    </div>
+
 </section>
 
-<section class="grid">
-  <div class="card">📅 Smart Booking</div>
-  <div class="card">🤖 AI Clinic Assistant</div>
-  <div class="card">👨‍⚕️ Doctor Management</div>
-  <div class="card">☁️ Cloud Database</div>
+<section class="stats">
+
+    <div class="stat-card">
+        <h2>15+</h2>
+        <p>Doctors</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>10K+</h2>
+        <p>Patients</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>24/7</h2>
+        <p>Support</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>98%</h2>
+        <p>Satisfaction</p>
+    </div>
+
+</section>
+
+<section id="services" class="services">
+
+    <h2>Our Services</h2>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <h3>🩺 General Medicine</h3>
+            <p>Comprehensive healthcare solutions.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>👶 Pediatrics</h3>
+            <p>Specialized child healthcare.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🦷 Dental Care</h3>
+            <p>Advanced dental treatments.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🧪 Laboratory</h3>
+            <p>Fast and accurate diagnostics.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>💊 Pharmacy</h3>
+            <p>Quality medicines and care.</p>
+        </div>
+
+        <div class="service-card">
+            <h3>🚑 Emergency</h3>
+            <p>Immediate medical assistance.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="doctors" class="doctors">
+
+<h2>Meet Our Doctors</h2>
+
+<div class="doctor-grid">
+
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600" alt="">
+<h3>Dr. Selam</h3>
+<p>Pediatric Specialist</p>
+</div>
+
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600" alt="">
+<h3>Dr. Elias</h3>
+<p>General Practitioner</p>
+</div>
+
+<div class="doctor-card">
+<img src="https://images.unsplash.com/photo-1622902046580-2b47f47f5471?w=600" alt="">
+<h3>Dr. Hana</h3>
+<p>Dental Specialist</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="booking" class="booking">
+
+<h2>Book Appointment</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name">
+
+<input type="email" placeholder="Email">
+
+<input type="tel" placeholder="Phone Number">
+
+<select>
+<option>Select Service</option>
+<option>General Medicine</option>
+<option>Pediatrics</option>
+<option>Dental Care</option>
+<option>Laboratory</option>
+</select>
+
+<input type="date">
+
+<button type="submit" class="btn-primary">
+Book Appointment
+</button>
+
+</form>
+
+</section>
+
+<section id="contact" class="contact">
+
+<h2>Contact Us</h2>
+
+<p>📍 Addis Ababa, Ethiopia</p>
+
+<p>📞 +251 91 264 3473</p>
+
+<p>📧 habtamutito257@gmail.com</p>
+
 </section>
 
 <footer>
-  Built by Kidus Habtamu
+
+<h3>Built by Kidus Habtamu</h3>
+
+<p>
+Web Designer • SaaS Developer
+</p>
+
 </footer>
 
 </body>
