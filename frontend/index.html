@@ -185,7 +185,39 @@ Book Appointment
 <p>
 Web Designer • SaaS Developer
 </p>
+<div class="chatbot-button" onclick="toggleChat()">
+💬
+</div>
 
+<div class="chatbot-window" id="chatWindow">
+
+<div class="chat-header">
+AI Assistant
+</div>
+
+<div class="chat-body" id="chatBody">
+
+<div class="bot-message">
+Hello 👋 How can I help you today?
+</div>
+
+</div>
+
+<div class="chat-input">
+
+<input
+type="text"
+id="userMessage"
+placeholder="Ask something..."
+>
+
+<button onclick="sendMessage()">
+Send
+</button>
+
+</div>
+
+</div>
 </footer>
 
 </body>
