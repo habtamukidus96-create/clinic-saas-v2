@@ -88,3 +88,59 @@ bookingForm.addEventListener("submit", function(e){
 });
 
 }
+function toggleChat(){
+
+const chat =
+document.getElementById("chatWindow");
+
+chat.classList.toggle("show-chat");
+
+}
+
+function sendMessage(){
+
+const input =
+document.getElementById("userMessage");
+
+const message =
+input.value.trim();
+
+if(!message) return;
+
+const body =
+document.getElementById("chatBody");
+
+body.innerHTML +=
+`<div class="user-message">${message}</div>`;
+
+let reply =
+"Please contact our clinic for more information.";
+
+if(message.toLowerCase().includes("doctor")){
+reply =
+"We have pediatric, dental and general doctors available.";
+}
+
+if(message.toLowerCase().includes("appointment")){
+reply =
+"You can book appointments using the form below.";
+}
+
+if(message.toLowerCase().includes("hours")){
+reply =
+"We are open Monday to Saturday from 8AM to 8PM.";
+}
+
+setTimeout(()=>{
+
+body.innerHTML +=
+`<div class="bot-message">${reply}</div>`;
+
+body.scrollTop =
+body.scrollHeight;
+
+},500);
+
+input.value="";
+
+}
